@@ -1,0 +1,21 @@
+-- Create a new database for pizza sales
+create database pizza_sales;
+
+
+-- Create a table to store customer orders 
+create table orders (
+order_id int not null,             -- Unique ID
+order_date date not null,          -- Date when
+order_time time not null,          -- Time when
+primary key (order_id) );          -- Primary Key (unique Identifier)
+
+-- Create table to store details of each pizza in an order
+create table order_details (
+order_details_id int not null,     -- Unique Id for order detail
+order_id int not null,             -- Reference order_id from orders table 
+pizza_id text not null,            -- ID/name of pizza ordered 
+quantity int not null,             -- Number of pizzas ordered
+primary key(order_details_id) );
+
+-- in other 2 tables I did not do DATA TYPE REFERENCE because on other 2 tables column is already 
+--HAVE DATA TYPE REFERENCE according to what i need in table so that why i didn't do that.
